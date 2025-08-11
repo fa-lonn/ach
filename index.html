@@ -166,36 +166,34 @@
       position: absolute; top: 15px; right: 20px; background: none; border: none;
       font-size: 1.8rem; cursor: pointer; color: #555;
     }
-    @media (max-width: 768px) {
+   @media (max-width: 768px) {
   .popup-content {
-    max-width: 90%;   /* ensures it fits well on mobile */
-    padding: 0.8rem;  /* smaller padding for compactness */
-    gap: 0.8rem;      /* less space between items */
+    max-width: 90%;
+    padding: 0.8rem;
+    gap: 0.8rem;
   }
   .popup-content img {
-    max-width: 180px; /* smaller product image */
+    max-width: 180px;
   }
   .popup-details h3 {
-    font-size: 1.4rem; /* smaller title */
+    font-size: 1.4rem;
   }
   .popup-details p,
   .popup-details ul li {
-    font-size: 0.9rem; /* smaller text for compact look */
+    font-size: 0.9rem;
   }
   header h1 {
-  font-size: clamp(1.6rem, 5.5vw, 3rem);
-}
-@media (max-width: 768px) {
+    font-size: clamp(1.6rem, 5.5vw, 3rem);
+  }
   .who-we-are {
-    flex-direction: column; /* stack slideshow above text */
+    flex-direction: column;
   }
   .slideshow-container {
-    order: 1; /* slideshow on top */
+    order: 1;
   }
   .about-text {
-    order: 2; /* text below */
+    order: 2;
   }
-  
 }
     
   </style>
@@ -261,10 +259,11 @@
   <div class="contact">
     <h2>Contact Us</h2>
     <div class="contact-details">
-      <p><strong>Address:</strong> 22 Wardleway, Polokwane</p>
-      <p><strong>Phone:</strong> 065 965 2652</p>
-      <p><strong>Email:</strong> info@mouthwateringachar.co.za</p>
-    </div>
+  <p><strong>Address:</strong><br>22 Wardleway, Polokwane</p>
+  <p><strong>Phone:</strong><br>065 965 2652</p>
+  <p><strong>Email:</strong><br>info@mouthwateringachar.co.za</p>
+</div>
+
     <form>
       <input type="text" placeholder="Your Name" required>
       <input type="email" placeholder="Your Email" required>
