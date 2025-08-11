@@ -4,22 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mouthwatering Achar</title>
-  <meta name="description" content="Bulk supplier of handcrafted Hot, Garlic, and Mild South African Achar. Based in Polokwane.">
+  <meta name="description" content="Bulk supplier of handcrafted Hot, Garlic, Mild, and Mild Garlic South African Achar. Based in Polokwane.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html, body {
-      font-family: 'Inter', sans-serif;
-      color: #333;
-      background-color: #fffdf8;
-      overflow-x: hidden;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { font-family: 'Inter', sans-serif; color: #333; background-color: #fffdf8; overflow-x: hidden; }
 
     header {
       background-image: url('background.png');
@@ -29,41 +19,14 @@
       text-align: center;
       color: white;
     }
-
-    header h1 {
-      font-size: 3rem;
-      letter-spacing: 3px;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 1rem;
-    }
-
-    .hero-buttons {
-      margin-top: 2rem;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
+    header h1 { font-size: 3rem; letter-spacing: 3px; text-shadow: 2px 2px 6px rgba(0,0,0,0.3); }
+    header p { font-size: 1.2rem; margin-top: 1rem; }
+    .hero-buttons { margin-top: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
     .hero-buttons button {
-      background: white;
-      color: #f4a300;
-      font-weight: bold;
-      border: 2px solid #f4a300;
-      padding: 0.8rem 1.5rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
+      background: white; color: #f4a300; font-weight: bold; border: 2px solid #f4a300;
+      padding: 0.8rem 1.5rem; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;
     }
-
-    .hero-buttons button:hover,
-    .hero-buttons button.active {
-      background: #f4a300;
-      color: white;
-    }
+    .hero-buttons button:hover, .hero-buttons button.active { background: #f4a300; color: white; }
 
     .slide-section {
       overflow: hidden;
@@ -71,111 +34,50 @@
       transition: max-height 0.6s ease, padding 0.4s ease;
       padding: 0 2rem;
     }
+    .slide-section.active { padding: 4rem 2rem; max-height: 2000px; }
+    .section-title { font-size: 2rem; margin-bottom: 1rem; border-left: 4px solid #f4a300; padding-left: 0.8rem; }
 
-    .slide-section.active {
-      padding: 4rem 2rem;
-      max-height: 2000px;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      border-left: 4px solid #f4a300;
-      padding-left: 0.8rem;
-    }
-
-    .who-we-are {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      align-items: flex-start;
-    }
-
-    .slideshow-container {
-      flex: 1;
-      width: 100%;
-      max-width: 100%;
-      position: relative;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
+    .who-we-are { display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; }
+    .slideshow-container { flex: 1; width: 100%; max-width: 100%; position: relative; border-radius: 10px; overflow: hidden; }
     .slideshow-container img {
-      width: 100%;
-      height: auto;
-      display: none;
-      border-radius: 10px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
+      width: 100%; height: auto; display: none; border-radius: 10px;
+      position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 1s ease-in-out;
     }
+    .slideshow-container img.active { display: block; position: relative; opacity: 1; }
+    .about-text { flex: 1; width: 100%; font-size: 1rem; white-space: normal; line-height: 1.6; }
 
-    .slideshow-container img.active {
-      display: block;
-      position: relative;
-      opacity: 1;
-    }
-
-    .about-text {
-      flex: 1;
-      width: 100%;
-      font-size: 1rem;
-      white-space: normal;
-    }
-
-    .flavour-cards {
-      display: flex;
+    .flavour-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1.5rem;
-      flex-wrap: wrap;
       margin-top: 2rem;
     }
-
-    .card {
-      position: relative;
-      flex: 1;
-      width: 100%;
-      max-width: 100%;
+    .flavour-item {
+      background: white;
       border-radius: 10px;
-      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 1rem;
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .flavour-item:hover { transform: translateY(-5px); }
+    .flavour-item img {
+      width: 100%;
       height: auto;
-      aspect-ratio: 4 / 3;
+      border-radius: 8px;
     }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.4);
-      z-index: 0;
-    }
-
-    .card > * {
-      position: relative;
-      z-index: 1;
-      padding: 0 1rem;
-    }
-
-    .card h3 {
-      margin-bottom: 0.8rem;
+    .flavour-item h3 {
+      margin: 0.8rem 0 0.4rem;
       font-size: 1.4rem;
+      color: #333;
+    }
+    .flavour-item p {
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+      color: #555;
     }
 
-    .card p {
-      margin-bottom: 1rem;
-    }
-
-    .card button,
-    button[type="submit"] {
+    .gradient-btn {
       background: linear-gradient(270deg, #f4a300, #ffcc70, #f4a300);
       background-size: 600% 600%;
       animation: gradientShift 3s ease infinite;
@@ -187,16 +89,7 @@
       font-weight: bold;
       transition: transform 0.2s ease-in-out;
     }
-
-    .card button:hover,
-    button[type="submit"]:hover {
-      opacity: 0.9;
-      transform: scale(1.03);
-    }
-
-    .card-hot { background-image: url('hot-01.png'); background-size: cover; background-position: center; }
-    .card-garlic { background-image: url('garlic-01.png'); background-size: cover; background-position: center; }
-    .card-mild { background-image: url('mild-01.png'); background-size: cover; background-position: center; }
+    .gradient-btn:hover { transform: scale(1.03); opacity: 0.9; }
 
     @keyframes gradientShift {
       0% { background-position: 0% 50%; }
@@ -204,112 +97,82 @@
       100% { background-position: 0% 50%; }
     }
 
-    .contact {
-      background-color: #fff0da;
-      padding: 3rem 2rem;
-    }
+    .contact { background-color: #fff0da; padding: 3rem 2rem; }
+    .contact h2 { font-size: 1.8rem; margin-bottom: 1rem; text-align: center; }
+    .contact-details { text-align: center; margin-bottom: 2rem; }
+    form { max-width: 600px; margin: auto; display: grid; gap: 1rem; }
+    input, textarea, select { padding: 0.8rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; }
+    footer { text-align: center; padding: 1rem; background-color: #f8f3e9; font-size: 0.9rem; }
 
-    .contact h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .contact-details {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    form {
-      max-width: 600px;
-      margin: auto;
-      display: grid;
-      gap: 1rem;
-    }
-
-    input, textarea, select {
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #f8f3e9;
-      font-size: 0.9rem;
-    }
-
-    .popup-form-overlay {
+    /* Product Popup */
+    .popup-overlay {
       display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.5);
-      justify-content: center;
-      align-items: center;
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+      justify-content: center; align-items: center;
       z-index: 1000;
     }
-
-    .popup-form {
-      background-color: white;
-      padding: 2rem;
-      border-radius: 10px;
+    .popup-content {
+      background: white;
+      border-radius: 12px;
+      max-width: 800px;
       width: 90%;
-      max-width: 500px;
+      display: flex; flex-wrap: wrap;
+      overflow: hidden;
+      padding: 1.5rem;
+      gap: 1.5rem;
+      animation: popupFade 0.4s ease forwards;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transform: scale(0.9);
+      opacity: 0;
       position: relative;
-      max-height: 90vh;
-      overflow-y: auto;
+      align-items: flex-start;
     }
-
+    .popup-overlay.show .popup-content {
+      transform: scale(1);
+      opacity: 1;
+    }
+    @keyframes popupFade {
+      to { opacity: 1; transform: scale(1); }
+    }
+    .popup-content img {
+      flex: 0 0 auto;
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: contain;
+      align-self: center;
+    }
+    .popup-details { flex: 1; min-width: 250px; }
+    .popup-details h3 { margin-bottom: 0.5rem; font-size: 1.8rem; color: #f4a300; }
+    .popup-details p { margin-bottom: 0.5rem; line-height: 1.5; }
+    .popup-details ul { margin: 0.3rem 0 1rem 1.2rem; padding: 0; }
+    .popup-details ul li { margin-bottom: 0.3rem; }
+    .popup-details .tag {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      background: #f4a300;
+      color: white;
+      margin-right: 0.4rem;
+    }
     .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 1.2rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: #888;
+      position: absolute; top: 15px; right: 20px; background: none; border: none;
+      font-size: 1.8rem; cursor: pointer; color: #555;
     }
-
-    #formMessage {
-      display: none;
-      text-align: center;
-      color: green;
-      margin-top: 1rem;
-    }
-
     @media (max-width: 768px) {
-      .who-we-are {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .flavour-cards {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      header h1 {
-        font-size: 2rem;
-      }
-
-      header p {
-        font-size: 1rem;
-      }
-
-      .popup-form {
-        padding: 1.2rem;
-      }
+      .popup-content { flex-direction: column; align-items: center; }
+      .popup-content img { max-width: 100%; }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>MOUTHWATERING ACHAR</h1>
-    <p>Premium Achar Supplier | Hot, Garlic, Mild</p>
+    <p>Premium Achar Supplier | Hot, Garlic, Mild, Mild Garlic</p>
     <div class="hero-buttons">
       <button id="aboutBtn" onclick="toggleSection('about')">About Us</button>
       <button id="flavoursBtn" onclick="toggleSection('flavours')">Our Flavours</button>
@@ -320,15 +183,15 @@
     <h2 class="section-title">About Us</h2>
     <div class="who-we-are">
       <div class="slideshow-container" id="slideshow">
-        <img src="IMG-20250730-WA0011.jpg" class="active" alt="Spicy achar">
-        <img src="buy-bulk-mango-atchar-15029.jpg" alt="Mango achar">
-        <img src="buy-bulk-mango-atchar-15268.jpg" alt="Fresh preparation">
+        <img src="IMG-20250730-WA0011.jpg" class="active" alt="Freshly prepared hot achar">
+        <img src="buy-bulk-mango-atchar-15029.jpg" alt="Bulk mango achar in preparation">
+        <img src="buy-bulk-mango-atchar-15268.jpg" alt="Fresh achar ingredients ready for mixing">
       </div>
       <div class="about-text">
         Mouthwatering Achar is a proudly South African supplier of premium handcrafted achar, based in the heart of Polokwane. We specialize in large-scale production and distribution of our uniquely bold flavours, catering to a wide range of clients, from national retailers and restaurants to caterers, and wholesalers.
-
-        We understand that in Mzansi, flavour is everything. That’s why we’ve perfected our three signature options: Hot, Garlic, and Mild, each prepared in bulk with care, consistency, and a serious kick of flavour.
-
+        <br><br>
+        We understand that in Mzansi, flavour is everything. That’s why we’ve perfected our four signature options: Hot, Garlic, Mild, and Mild Garlic, each prepared in bulk with care, consistency, and a serious kick of flavour.
+        <br><br>
         Whether your customers are looking for that extra zing with their pap and vleis, or just a bit of mellow spice to top off a sandwich, we've got you covered.
       </div>
     </div>
@@ -336,21 +199,30 @@
 
   <div id="flavoursSection" class="slide-section">
     <h2 class="section-title">Our Flavours</h2>
-    <div class="flavour-cards">
-      <div class="card card-hot">
+    <div class="flavour-grid">
+      <div class="flavour-item">
+        <img src="jar.png" alt="Hot Achar">
         <h3>Hot</h3>
         <p>A fiery traditional taste that packs serious heat.</p>
-        <button onclick="openOrderForm('Hot')">Order Now</button>
+        <button class="gradient-btn" onclick="showProductDetails('Hot')">Details</button>
       </div>
-      <div class="card card-garlic">
+      <div class="flavour-item">
+        <img src="jar.png" alt="Garlic Achar">
         <h3>Garlic</h3>
         <p>Garlic-forward blend. Distinct and aromatic.</p>
-        <button onclick="openOrderForm('Garlic')">Order Now</button>
+        <button class="gradient-btn" onclick="showProductDetails('Garlic')">Details</button>
       </div>
-      <div class="card card-mild">
+      <div class="flavour-item">
+        <img src="jar.png" alt="Mild Achar">
         <h3>Mild</h3>
         <p>All the richness without the intense burn.</p>
-        <button onclick="openOrderForm('Mild')">Order Now</button>
+        <button class="gradient-btn" onclick="showProductDetails('Mild')">Details</button>
+      </div>
+      <div class="flavour-item">
+        <img src="jar.png" alt="Mild Garlic Achar">
+        <h3>Mild Garlic</h3>
+        <p>Smooth, rich taste with a gentle garlic aroma.</p>
+        <button class="gradient-btn" onclick="showProductDetails('Mild Garlic')">Details</button>
       </div>
     </div>
   </div>
@@ -366,33 +238,24 @@
       <input type="text" placeholder="Your Name" required>
       <input type="email" placeholder="Your Email" required>
       <textarea rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
+      <button type="submit" class="gradient-btn">Send Message</button>
     </form>
   </div>
 
-  <div class="popup-form-overlay" id="orderPopup">
-    <div class="popup-form">
-      <button class="close-btn" onclick="closeOrderForm()">&#10006;</button>
-      <h3>Place Your Order</h3>
-      <form id="orderForm">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <select id="flavourSelect" required>
-          <option value="">Select Flavour</option>
-          <option value="Hot">Hot</option>
-          <option value="Garlic">Garlic</option>
-          <option value="Mild">Mild</option>
-        </select>
-        <select required>
-          <option value="">Select Size</option>
-          <option value="5L">5 Litre</option>
-          <option value="4L">4 Litre</option>
-        </select>
-        <input type="number" min="1" placeholder="Quantity" required>
-        <textarea rows="3" placeholder="Delivery Address" required></textarea>
-        <button type="submit">Submit Order</button>
-      </form>
-      <p id="formMessage">Your order has been submitted!</p>
+  <!-- PRODUCT POPUP -->
+  <div class="popup-overlay" id="productPopup">
+    <div class="popup-content">
+      <button class="close-btn" onclick="closeProductDetails()">&#10006;</button>
+      <img id="popupImage" src="" alt="Product Image">
+      <div class="popup-details">
+        <h3 id="popupTitle"></h3>
+        <p id="popupDescription"></p>
+        <p><strong>Ingredients:</strong></p>
+        <ul id="popupIngredients"></ul>
+        <p><strong>Available Sizes:</strong></p>
+        <p id="popupSizes"></p>
+        <div id="popupExtraInfo" style="margin-top: 1rem; font-size: 0.95rem; color: #555;"></div>
+      </div>
     </div>
   </div>
 
@@ -434,25 +297,90 @@
       }
     }
 
-    function openOrderForm(flavour) {
-      document.getElementById('orderPopup').style.display = 'flex';
-      document.getElementById('flavourSelect').value = flavour;
+    const productInfo = {
+      "Hot": {
+        image: "jar.png",
+        description: "Our Hot Achar delivers a fiery kick for spice lovers, perfect for hearty meals and bold recipes.",
+        ingredients: ["Mango", "Sunflower Oil", "Vinegar", "Chili", "Salt", "Spices"],
+        sizes: "4L, 5L",
+        extraInfo: [
+          "Bulk pricing available on request",
+          "Shelf life: 12 months (unopened)",
+          "Nationwide delivery"
+        ]
+      },
+      "Garlic": {
+        image: "jar.png",
+        description: "Aromatic garlic-infused achar for a deep, savoury flavour that elevates any dish.",
+        ingredients: ["Mango", "Sunflower Oil", "Vinegar", "Garlic", "Salt", "Spices"],
+        sizes: "4L, 5L",
+        extraInfo: [
+          "Bulk pricing available on request",
+          "Shelf life: 12 months (unopened)",
+          "Nationwide delivery"
+        ]
+      },
+      "Mild": {
+        image: "jar.png",
+        description: "Rich in flavour but with a gentle heat, our Mild Achar is perfect for wider audiences.",
+        ingredients: ["Mango", "Sunflower Oil", "Vinegar", "Mild Chili", "Salt", "Spices"],
+        sizes: "4L, 5L",
+        extraInfo: [
+          "Bulk pricing available on request",
+          "Shelf life: 12 months (unopened)",
+          "Nationwide delivery"
+        ]
+      },
+      "Mild Garlic": {
+        image: "jar.png",
+        description: "Smooth and flavourful, combining gentle spice with a subtle garlic aroma.",
+        ingredients: ["Mango", "Sunflower Oil", "Vinegar", "Garlic", "Mild Chili", "Salt", "Spices"],
+        sizes: "4L, 5L",
+        extraInfo: [
+          "Bulk pricing available on request",
+          "Shelf life: 12 months (unopened)",
+          "Nationwide delivery"
+        ]
+      }
+    };
+
+    function showProductDetails(flavour) {
+      const popup = document.getElementById('productPopup');
+      const product = productInfo[flavour];
+
+      document.getElementById('popupImage').src = product.image;
+      document.getElementById('popupTitle').innerText = flavour + " Achar";
+      document.getElementById('popupDescription').innerText = product.description;
+      
+      // Ingredients list
+      const ingredientsList = document.getElementById('popupIngredients');
+      ingredientsList.innerHTML = '';
+      product.ingredients.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        ingredientsList.appendChild(li);
+      });
+
+      document.getElementById('popupSizes').innerText = product.sizes;
+
+      // Extra info
+      document.getElementById('popupExtraInfo').innerHTML = product.extraInfo.map(info => `<p>• ${info}</p>`).join('');
+
+      popup.classList.add('show');
+      popup.style.display = 'flex';
       document.body.style.overflow = 'hidden';
     }
 
-    function closeOrderForm() {
-      document.getElementById('orderPopup').style.display = 'none';
+    function closeProductDetails() {
+      const popup = document.getElementById('productPopup');
+
+      popup.classList.remove('show');
+      setTimeout(() => popup.style.display = 'none', 300);
       document.body.style.overflow = '';
     }
 
-    document.getElementById('orderForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      document.getElementById('formMessage').style.display = 'block';
-      setTimeout(() => {
-        document.getElementById('formMessage').style.display = 'none';
-        closeOrderForm();
-        document.getElementById('orderForm').reset();
-      }, 2000);
+    document.getElementById('productPopup').addEventListener('click', function(e) {
+      if (e.target === this) closeProductDetails();
     });
   </script>
 </body>
