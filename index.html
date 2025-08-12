@@ -3,9 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mouthwatering Achar</title>
-  <meta name="description" content="Bulk supplier of handcrafted Hot, Garlic, Mild, and Mild Garlic South African Achar. Based in Polokwane.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- BASIC SEO -->
+  <title>Mouthwatering Achar | Bulk South African Achar Supplier in Polokwane</title>
+  <meta name="description" content="Premium bulk supplier of handcrafted Hot, Garlic, Mild, and Garlic Hot South African Achar. Based in Polokwane, delivering nationwide.">
+  <meta name="keywords" content="South African achar, bulk achar supplier, achar, achaar, atchar, acher, Polokwane achar, hot achar, garlic achar, mild achar, garlic hot achar, achar supplier, nationwide delivery">
+
+  <!-- LOCAL BUSINESS STRUCTURED DATA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Mouthwatering Achar",
+    "image": "https://www.mouthwateringachar.co.za/images/achar-jar.jpg",
+    "@id": "",
+    "url": "https://www.mouthwateringachar.co.za",
+    "telephone": "+27-65-965-2652",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Dalmada",
+      "addressLocality": "Polokwane",
+      "postalCode": "0700",
+      "addressCountry": "ZA"
+    },
+    "geo": {
+  "@type": "GeoCoordinates",
+  "latitude": -23.9045,
+  "longitude": 29.4689
+}
+  }
+  </script>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -201,7 +229,7 @@
 <body>
   <header>
     <h1>MOUTHWATERING ACHAR</h1>
-    <p>Premium Achar Supplier | Hot, Garlic, Mild, Mild Garlic</p>
+    <p>Premium Achar Supplier | Hot, Garlic, Mild, Garlic Hot</p>
     <div class="hero-buttons">
       <button id="aboutBtn" onclick="toggleSection('about')">About Us</button>
       <button id="flavoursBtn" onclick="toggleSection('flavours')">Our Flavours</button>
@@ -248,10 +276,10 @@
         <button class="gradient-btn" onclick="showProductDetails('Mild')">Details</button>
       </div>
       <div class="flavour-item">
-        <img src="jar.png" alt="Mild Garlic Achar">
-        <h3>Mild Garlic</h3>
+        <img src="jar.png" alt="Garlic Hot Achar">
+        <h3>Garlic Hot</h3>
         <p>Smooth, rich taste with a gentle garlic aroma.</p>
-        <button class="gradient-btn" onclick="showProductDetails('Mild Garlic')">Details</button>
+        <button class="gradient-btn" onclick="showProductDetails('Garlic Hot')">Details</button>
       </div>
     </div>
   </div>
@@ -259,7 +287,7 @@
   <div class="contact">
     <h2>Contact Us</h2>
     <div class="contact-details">
-  <p><strong>Address:</strong><br>22 Wardleway, Polokwane</p>
+  <p><strong>Address:</strong><br>Dalmada, Polokwane</p>
   <p><strong>Phone:</strong><br>065 965 2652</p>
   <p><strong>Email:</strong><br>info@mouthwateringachar.co.za</p>
 </div>
@@ -331,8 +359,8 @@
       "Hot": {
         image: "jar.png",
         description: "Our Hot Achar delivers a fiery kick for spice lovers, perfect for hearty meals and bold recipes.",
-        ingredients: ["Mango", "Sunflower Oil", "Vinegar", "Chili", "Salt", "Spices"],
-        sizes: "4L, 5L",
+        ingredients: ["Fresh Green Mango", "Soy Bean Oil", "Chili", "Salt", "Natural Spices"],
+        sizes: "90g, 250g, 400g, 500g, 800g, 1kg, 2kg, 4kg, 9kg",
         extraInfo: [
           "Bulk pricing available on request",
           "Shelf life: 12 months (unopened)",
@@ -342,8 +370,8 @@
       "Garlic": {
         image: "jar.png",
         description: "Aromatic garlic-infused achar for a deep, savoury flavour that elevates any dish.",
-        ingredients: ["Mango", "Sunflower Oil", "Vinegar", "Garlic", "Salt", "Spices"],
-        sizes: "4L, 5L",
+        ingredients: ["Fresh Green Mango", "Soy Bean Oil", "Garlic", "Salt", "Natural Spices"],
+        sizes: "90g, 250g, 400g, 500g, 800g, 1kg, 2kg, 4kg, 9kg",
         extraInfo: [
           "Bulk pricing available on request",
           "Shelf life: 12 months (unopened)",
@@ -353,19 +381,19 @@
       "Mild": {
         image: "jar.png",
         description: "Rich in flavour but with a gentle heat, our Mild Achar is perfect for wider audiences.",
-        ingredients: ["Mango", "Sunflower Oil", "Vinegar", "Mild Chili", "Salt", "Spices"],
-        sizes: "4L, 5L",
+        ingredients: ["Fresh Green Mango", "Soy Bean Oil", "Salt", "Natural Spices"],
+        sizes: "90g, 250g, 400g, 500g, 800g, 1kg, 2kg, 4kg, 9kg",
         extraInfo: [
           "Bulk pricing available on request",
           "Shelf life: 12 months (unopened)",
           "Nationwide delivery"
         ]
       },
-      "Mild Garlic": {
+      "Garlic Hot": {
         image: "jar.png",
         description: "Smooth and flavourful, combining gentle spice with a subtle garlic aroma.",
-        ingredients: ["Mango", "Sunflower Oil", "Vinegar", "Garlic", "Mild Chili", "Salt", "Spices"],
-        sizes: "4L, 5L",
+        ingredients: ["Fresh Green Mango", "Soy Bean Oil", "Garlic", "Chili", "Salt", "Natural Spices"],
+        sizes: "90g, 250g, 400g, 500g, 800g, 1kg, 2kg, 4kg, 9kg",
         extraInfo: [
           "Bulk pricing available on request",
           "Shelf life: 12 months (unopened)",
