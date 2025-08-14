@@ -289,15 +289,16 @@
     <div class="contact-details">
   <p><strong>Address:</strong><br>Dalmada, Polokwane</p>
   <p><strong>Phone:</strong><br>065 965 2652</p>
-  <p><strong>Email:</strong><br>info@mouthwateringachar.co.za</p>
+  <p><strong>Email:</strong><br>contact@mouthwateringachar.co.za</p>
 </div>
 
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit" class="gradient-btn">Send Message</button>
-    </form>
+    <form action="send-mail.php" method="POST">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+  <button type="submit" class="gradient-btn">Send Message</button>
+</form>
+
   </div>
 
   <!-- PRODUCT POPUP -->
