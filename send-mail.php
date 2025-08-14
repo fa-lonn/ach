@@ -39,9 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ";
 
         $mail->send();
-        echo "Message has been sent successfully!";
-    } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-    }
+exit; // No HTML output, just exit quietly
 }
 ?>
